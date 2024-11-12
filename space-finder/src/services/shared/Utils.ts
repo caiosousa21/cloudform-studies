@@ -1,3 +1,4 @@
+import { APIGatewayProxyEvent } from "aws-lambda";
 import { JsonError } from "./Validator";
 import { randomUUID } from "crypto";
 
@@ -11,4 +12,12 @@ export function parseJson(arg: string) {
 
 export function createRandomId() {
   return randomUUID();
+}
+
+export function hasAdminGroup(event: APIGatewayProxyEvent) {
+  const groups = event.requestContext.authorizer?.claims["cognito:groups"];
+  if (groups) {
+    return (groups as string).includes("admins");
+  }
+  return false;
 }
