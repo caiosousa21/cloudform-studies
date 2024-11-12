@@ -1,0 +1,25 @@
+GET https://7jjtvbtma1.execute-api.sa-east-1.amazonaws.com/prod/spaces
+###
+
+POST https://7jjtvbtma1.execute-api.sa-east-1.amazonaws.com/prod/spaces
+content-type: application/json
+
+{
+    "location": "Rio de Janeiro",
+    "name": "Beach"
+}
+###
+
+GET https://7jjtvbtma1.execute-api.sa-east-1.amazonaws.com/prod/spaces?id=89313daa-1c96-4769-b93e-dc25ec3915b7
+###
+
+DELETE https://7jjtvbtma1.execute-api.sa-east-1.amazonaws.com/prod/spaces?id=89313daa-1c96-4769-b93e-dc25ec3915b7
+###
+
+PUT https://7jjtvbtma1.execute-api.sa-east-1.amazonaws.com/prod/spaces?id=f8287a76-cbe5-4dbe-9b20-d65e5c81ba2e
+content-type: application/json
+
+{
+    "name": "Posto 33",
+}
+###
